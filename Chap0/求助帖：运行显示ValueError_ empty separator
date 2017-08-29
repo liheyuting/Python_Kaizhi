@@ -1,0 +1,64 @@
+问题描述：
+
+在learn python the hard way 25章节用python3运行第一个def代码显示如下：
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/dorali/Desktop/Learn_python_the_hard_way/ex25.py", line 4, in break_words
+    words = stuff.split(' ')
+ValueError: empty separator
+
+代码整段：
+def break_words(stuff):
+    """This function will break up words for us"""
+    words = stuff.split(' ')
+    return words
+
+曾尝试过以下几种方式：
+ words = stuff.split(' ')
+ words = stuff.split( )
+ words = stuff.split(' , ')
+ words = stuff.split('/')
+ words = stuff.split('+')等，均报错显示empty separator
+ 
+电脑版本：Mac／python3
+朋友用windows／python 2 运行正常
+
+感谢大家为我解答疑惑，这个问题几乎已经折腾我两天的学习时间了。。谢谢了。
+
+代码全文如下：
+#!/usr/bin/env python3
+def break_words(stuff):
+    """This function will break up words for us"""
+    words = stuff.split(' ')
+    return words
+
+def sort_words(words):
+    """Sorts the words."""
+    return sorted(words)
+
+def print_first_word(words):
+    """Prints the first word after poping it off"""
+    word = words.pop(0)
+    print(word)
+
+def print_last_word(words):
+    """Print the first word after poping it off."""
+    word = words.pop(-1)
+    print(word)
+
+def sort_sentence(sentence):
+    """Takes in a full sentence and returns the sorted words."""
+    words = break_words(sentence)
+    return  sort_words(words)
+
+def print_first_and_last(sentence):
+    """Prints the first and last words of the sentence."""
+    words = break_words(sentence)
+    print_first_word(words)
+    print_last_word(words)
+
+def print_first_and_last_sorted(sentence):
+    """Sorts the words then prints the first and last one."""
+    words = sort_words(sentence)
+    print_first_word(words)
+    print_last_word(words)

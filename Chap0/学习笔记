@@ -1,0 +1,321 @@
+# 注解
+
+第七章
+1. 
+Q: File "ex7.py", line 1
+SyntaxError: Non-ASCII character '\xe6' in file ex7.py on line 1, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+bogon:dora dorali$ 
+
+A：在开头加上 # -*- coding: utf-8 -*
+
+2.
+Q；不添加","
+
+A：添加：空格,不换行；不添加：换行
+
+第八章
+1.
+Q：  File "ex8.py", line 7
+    "I had this thing",
+    ^
+IndentationError: unexpected indent
+
+A：前一行将"%“写成了”#“
+
+Q：写的代码中间多了“，”
+A：在赋值formatter的时候中间多加了“，”
+
+Q：注意最后一行程序中既有单引号又有双引号，你觉得它是如何工作的?
+A：先计算单引号，再计算双引号
+
+第九章（顺利）
+Q：print “”“ ，”“”
+A：中间同时打印多句话
+
+第十章
+R：\n 放入一个新行（new line）
+\\ 双反斜杠：打印出一个反斜杠
+
+Q:转义符号
+A:
+转义字符	描述
+\(在行尾时)	续行符
+\\	反斜杠符号
+\'	单引号
+\"	双引号
+\a	响铃
+\b	退格(Backspace)
+\e	转义
+\000	空
+\n	换行
+\v	纵向制表符
+\t	横向制表符
+\r	回车
+\f	换页
+\oyy	八进制数yy代表的字符，例如：\o12代表换行
+\xyy	十进制数yy代表的字符，例如：\x0a代表换行
+\other	其它的字符以普通格式输出
+
+Q:格式符
+A：
+%s    字符串 (采用str()的显示)
+%r    字符串 (采用repr()的显示)
+%c    单个字符
+%b    二进制整数
+%d    十进制整数
+%i    十进制整数
+%o    八进制整数
+%x    十六进制整数
+%e    指数 (基底写为e)
+%E    指数 (基底写为E)
+%f    浮点数
+%F    浮点数，与上相同
+%g    指数(e)或浮点数 (根据显示长度)
+%G    指数(E)或浮点数 (根据显示长度)
+%%    字符"%"
+
+Q: %s 和 %r 的区别
+A（待定）：%s：‘内容‘--内容；%r：‘内容‘--’内容‘
+
+第十一章
+Q：raw_input 与 input 的区别
+
+A：这两个函数都可以读取用户的输入，不同的是input（）函数要求用户输入有效的表达式，而raw_input()函数将用户输入的任意类型数据都转换为一个字符串。
+除非特殊情况，一般推荐rawz_input()
+
+Q:raw_input还能读取什么
+A：记录输入的数据，基本算是复制吧。在3里可以用print替换了
+
+第十二章
+Q：pydoc 命令是用来做什么
+A（不算清楚）：pydoc是Python自带的模块，主要用于从python模块中自动生成文档，这些文档可以基于文本呈现的、也可以生成WEB 页面的，还可以在服务器上以浏览器的方式呈现
+理解：读取文档
+
+第十三章
+Q：Traceback (most recent call last):
+  File "ex13.py", line 5, in <module>
+    script, first, second, third = argv #unpack
+ValueError: need more than 1 value to unpack
+A：模块相对应unpack的 value值不够
+
+Q:将raw_input 和argu 一起使用
+A：后头看
+
+第十五章
+Q：只用raw_input写脚本，还需后头看
+
+第十六章
+Q：target.write( %r '\n' %r '\n' %r '\n') % (line1, line2, line3)
+A：不知道为什么说%是invalid syntax
+
+Q:为什么多加一个“w"?
+A:不加显示的是：No such file or directory: 'test3.txt'
+且一直重复：command not found 直到输入exit。
+提示：open对于文件的写入
+操作态度是安全第一，所以你只有特别指定以后，它才会进行写入操作
+（不是很懂，需回看）
+
+第十七章
+Q：用一行改脚本
+to_file.write(from_file)
+A：错误（不懂，需回看）
+Traceback (most recent call last):
+  File "ex17-2.py", line 10, in <module>
+    to_file.write(from_file)
+AttributeError: 'str' object has no attribute 'write'
+
+Q：找出为什么你需要在代码中写 
+A：从一个文件中copy东西出来，需要close来关闭文件，这样的话，之后就不能对于该文件做其他的处理。
+
+第十八章
+Q：写函数注意事项
+A：
+1. 函数定义是以def开始的吗?
+2. 函数名称是以字符和下划线_组成的吗?
+3. 函数名称是不是紧跟着括号(?
+4. 括号里是否包含参数?多个参数是否以逗号隔开?
+5. 参数名称是否有重复?(不能使用重复的参数名)
+6. 紧跟着参数的是不是括号和冒号):?
+7. 紧跟着函数定义的代码是否使用了 4 个空格的缩进 (indent)? 
+8. 函数结束的位置是否取消了缩进 (“dedent”)?
+
+
+A：
+1. 调运函数时是否使用了函数的名称?
+2. 函数名称是否紧跟着(?
+3. 括号后有无参数?多个参数是否以逗号隔开?
+4. 函数是否以)结尾?
+
+Q：阅读几遍
+A：运行函数(run)’、‘调用函数(call)’、和 ‘使用函数(use)’是同一个意思
+
+
+第十九章
+
+A：重新定义了函数-函数中间不要用=重新定义函数
+例如：count（x,y）
+     中间注意不要  count（）=（x,y）
+
+第二十章
+A：
+seek() 方法用于移动文件读取指针到指定位置
+fileObject.seek(offset[, whence])
+参数
+offset -- 开始的偏移量，也就是代表需要移动偏移的字节数
+whence：可选，默认值为 0。给offset参数一个定义，表示要从哪个位置开始偏移；0代表从文件开头开始算起，1代表从当前位置开始算起，2代表从文件末尾算起。
+
+
+
+几个章节的学习记录没保存上。。
+
+第25章
+Q：python 3 和python2 里的 """不知道怎么用，终端显示为空def
+
+Q:Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'ex25'
+
+A:先进入所在文件夹
+
+Q:Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/dorali/Desktop/Learn_python_the_hard_way/ex25.py", line 4, in break_words
+    words = stuff.split('')
+ValueError: empty separator
+
+第30章节
+if :
+elif:
+else:
+
+第35章
+Q：在bear_room里的false是怎么用的
+Q:判断是否是数字
+Q:exit 的作用
+
+第37章
+Keywords(关键字)
+and
+del
+from
+not
+while
+as
+elif
+global
+or
+with
+assert
+else
+if
+pass
+yield
+break
+except
+import
+print
+class
+exec
+in
+raise
+continue
+finally
+is
+return
+def
+for
+lambda
+try
+
+
+数据类型
+True
+False
+None
+strints
+numbers
+floats
+lists
+
+字符串转义序列 escape sequences
+\\
+\'
+\"
+\a
+\b
+\f
+\n
+\r
+\t
+\v
+
+字符串格式化
+%d
+$i
+%o
+%u
+%x
+%X
+%e
+%E
+%f
+%F
+%g
+%G
+%c
+%r
+%s
+%%
+
+操作符号
++
+-
+*
+**
+/
+//
+%
+<
+>
+<=
+>=
+==
+!=
+<>
+()
+[]
+{}
+@
+,
+:
+.
+=
+;
++=
+-=
+*=
+/=
+//=
+%=
+**=
+
+第38章
+1. 函数以及函数的功能。
+2. 每个变量的初始赋值。
+3. 每个在程序的各个部分中多次出现的变量。它们以后可能会给你带来麻烦。 4. 任何不包含 else 的if语句。它们是正确的吗?
+5. 任何可能没有结束点的while循环。
+6. 最后一条，代码中任何你看不懂的部分都记下来。
+
+第39章
+类(Class): 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例
+
+dir() 函数不带参数时，返回当前范围内的变量、方法和定义的类型列表；带参数时，返回参数的属性、方法列表。如果参数包含方法__dir__()，该方法将被调用。如果参数不包含__dir__()，该方法将最大限度地收集参数信息。
+
+第40章
+cities = {'cs': 'San Francisco', 'MI': 'Detroit', 'FL': 'Jacksonville'}
+
+dict无序
+
+
+
+

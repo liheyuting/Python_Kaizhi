@@ -1,0 +1,1 @@
+https://github.com/Show-Me-the-Code/python/blob/master/NKUCodingCat/0009/0009.py# 引入模块import urllib2,re#引入函数from lxml import etreesrc = urllib2.urlopen("""http://wangwei007.blog.51cto.com/68019/1217082""").read()#当i在这个循环里，就输出链接for i in etree.HTML(src.decode('utf-8', 'ignore')).xpath(u"//a"):	print i.attrib["href"]

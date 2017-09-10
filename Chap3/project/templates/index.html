@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>Weatherseaching</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<form action="user_request" method = "GET">
+		<div class="page">
+			<img src="static/pexels-photo-128458.jpeg" alt="">
+			<div class="page-search">
+				<input type="text" placeholder="查询天气" name="city" >
+				<input type="submit" name="btn" value ="查询">
+				<input type="submit" name="btn" value ="历史">
+				<input type="submit" name="btn" value ="帮助">
+			</div>
+			<div class="page-result">
+				{% block content %}
+	 		    
+	 		    <p> {{ result }} </p>
+	 		    {% endblock %}
+			</div>
+
+			
+
+
+		</div>
+	</form>
+</body>
+</html>

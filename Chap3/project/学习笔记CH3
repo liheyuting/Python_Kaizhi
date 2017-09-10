@@ -1,1 +1,6 @@
 - 为什么<li>系列前面要加上<ul>
+- button和submit的区别
+-  @app route的路径怎么放
+- 装饰器是什么
+- {{}} ---传递参数
+- {% %}  ---继承，for 循环，if 语句，逻辑判断语句，开始if，for，后面一定要endfor或者endif

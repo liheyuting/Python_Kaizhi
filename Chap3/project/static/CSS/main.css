@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+.afterfix:after{
+	display: block;
+	content: '';
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+.page{
+	width: 90%;
+	font-family:'微软雅黑';
+	margin: 0 auto;
+	text-align: center;
+
+}
+.page-search{
+	width: 868px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.page-search input[type="text"]{
+	width: 200px;
+	height:34px;
+	padding:3px 10px;
+	left: 90px;
+	vertical-align: middle;
+	border-radius:3px;
+	border: 1px solid  #cfcfcf;
+
+	
+}
+.page-search input[type="button"]{
+	width: 80px;
+	height: 34px;
+	border-radius:3px;
+	background: #989898;
+	cursor: pointer;
+}
+
+.page-result{
+	/*padding: 20px  40px;*/
+	font-size: 16px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+.page-result h1{
+	font-size: 24px;
+	padding: 20px;
+	
+}
+
+
+
+
+
+
+
+
+
+

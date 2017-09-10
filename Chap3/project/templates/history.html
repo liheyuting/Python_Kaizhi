@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block content %}
+	<h1><strong>查询结果</strong></h1>
+	{% for line in result %}
+	<p> {{ line }} </p>
+	{% endfor %}
+	
+{% endblock %}
